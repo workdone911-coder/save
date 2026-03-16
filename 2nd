@@ -1,0 +1,40 @@
+# Step 1: Create repository in GitHub (manually on GitHub website)
+
+# Step 2: Clone repository to local system
+git clone https://github.com/username/git-demo.git
+cd git-demo
+
+# Step 3: Create a file and add content
+echo "Hello GitHub" > file1.txt
+
+# Step 4: Commit and push to main branch
+git add file1.txt
+git commit -m "Initial commit"
+git push origin main
+
+# Step 5: Create and switch to a new branch
+git branch feature1
+git checkout feature1
+
+# Step 6: Modify the file in feature branch
+echo "Feature branch change" >> file1.txt
+git add file1.txt
+git commit -m "Feature branch update"
+git push origin feature1
+
+# Step 7: Show difference between branches
+git diff main feature1
+
+# Step 8: Create merge conflict
+git checkout main
+echo "Main branch change" >> file1.txt
+git add file1.txt
+git commit -m "Main branch change"
+git merge feature1
+
+# Step 9: Resolve merge conflict and commit
+git add file1.txt
+git commit -m "Merge conflict resolved"
+git push origin main
+
+# Step 10: Fork repository and create pull request (done on GitHub website)
