@@ -1,0 +1,31 @@
+# Step 1: Configure Git username and email
+git config --global user.name "YourName"
+git config --global user.email "your_email@example.com"
+
+# Step 2: Initialize a new Git repository
+git init
+
+# Step 3: Check the repository status
+git status
+
+# Step 4: Add all files to staging area
+git add .
+
+# Step 5: Commit the files
+git commit -m "Initial commit"
+
+# Step 6: View commit history
+git log
+
+# Step 7: Add remote GitHub repository
+git remote add origin https://github.com/username/repository-name.git
+
+# Step 8: Push code to GitHub
+git push -u origin master
+
+# Step 9: Clone the repository
+git clone https://github.com/username/repository-name.git
+
+# Step 10: Reset the last commit
+git reset --soft HEAD~1
+git reset --hard HEAD~1
