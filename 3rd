@@ -1,0 +1,50 @@
+# Step 1: Install and start Jenkins
+# Open browser and go to:
+http://localhost:8080
+
+# Copy administrator password from:
+C:\ProgramData\Jenkins\secrets\initialAdminPassword
+
+# Install suggested plugins and complete Jenkins setup
+
+
+# Step 2: Create a new Jenkins job
+# Jenkins Dashboard → New Item
+# Enter project name → Select "Freestyle Project" → Click OK
+
+
+# Step 3: Configure GitHub repository
+# In Source Code Management → Select Git
+# Enter repository URL:
+https://github.com/username/repository-name.git
+
+
+# Step 4: Add Build Step
+# Scroll to Build → Add Build Step → Execute Windows Batch Command
+echo "Build started"
+python app.py
+
+
+# Step 5: Save the job and run build manually
+# Click Save
+# Click Build Now
+
+
+# Step 6: Scheduled build using Poll SCM
+# Configure → Build Triggers → Select Poll SCM
+* * * * *
+
+
+# Step 7: Event-based automatic build using Webhook
+# Install and run ngrok
+ngrok http 8080
+
+# Step 8: Add webhook in GitHub
+# GitHub Repository → Settings → Webhooks → Add Webhook
+# Payload URL:
+http://ngrok_generated_URL/github-webhook/
+
+# Step 9: Push code to GitHub to trigger Jenkins build
+git add .
+git commit -m "Trigger build"
+git push origin main
